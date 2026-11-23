@@ -196,7 +196,7 @@ export default function Home() {
             <a className="button button-quiet" href="#about">להכיר את אסתר</a>
           </div>
           <dl className="hero-stats" aria-label="נתונים מרכזיים">
-            <div><dt>26</dt><dd>כותרים בספרייה</dd></div>
+            <div><dt>{books.length}</dt><dd>כותרים בספרייה</dd></div>
             <div><dt>46</dt><dd>שנות יצירה</dd></div>
             <div><dt>1981</dt><dd>פרס זאב על ״אליפים״</dd></div>
           </dl>
@@ -243,7 +243,7 @@ export default function Home() {
       <section className="catalog" id="catalog">
         <div className="section-heading catalog-heading">
           <div><p className="eyebrow">הספרייה המלאה</p><h2>כל הספרים</h2></div>
-          <p>26 כותרים · שערים מקוריים · חמש פסקאות סקירה לכל ספר</p>
+          <p>{books.length} כותרים · שערים מקוריים · חמש פסקאות סקירה לכל ספר</p>
         </div>
 
         <div className="catalog-tools">
