@@ -21,6 +21,7 @@
 *.pem
 *.bak
 .site-process
+.site-process.*.log
 
 # debug
 npm-debug.log*
