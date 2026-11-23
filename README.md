@@ -15,3 +15,21 @@
 ## עדכון תוכן
 
 רשימת הספרים, הסקירות, הכתבות, העיבודים והפרסים נמצאת בקובץ `app/content.ts`. מבנה העמוד נמצא בקובץ `app/page.tsx`, העיצוב בקובץ `app/globals.css`, ותמונות השער המקומיות בתיקייה `public/assets/covers`.
+
+## פריסה ב-Cloudflare
+
+האתר מוגדר כ-Cloudflare Worker בשם `ester-site` ומחובר למסד D1 בשם `ester-comments` דרך הקישור `DB`.
+
+לפני הפריסה הראשונה יש להחיל את סכימת מסד הנתונים:
+
+```powershell
+pnpm run db:migrate:remote
+```
+
+לאחר מכן אפשר לבנות ולפרוס ידנית:
+
+```powershell
+pnpm run deploy
+```
+
+ב-Cloudflare Workers Builds יש להגדיר את פקודת הבנייה `pnpm run build` ואת פקודת הפריסה `pnpm exec wrangler deploy --config dist/server/wrangler.json`. כל דחיפה לענף `main` תפעיל פריסה חדשה.

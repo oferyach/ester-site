@@ -1,5 +1,5 @@
 {
-  "name": "sites-project",
+  "name": "ester-site",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -9,6 +9,9 @@
     "dev": "vinext dev --hostname 0.0.0.0",
     "build": "vinext build",
     "start": "vinext start",
+    "deploy": "vinext build && wrangler deploy --config dist/server/wrangler.json",
+    "db:migrate:local": "wrangler d1 migrations apply ester-comments --local",
+    "db:migrate:remote": "wrangler d1 migrations apply ester-comments --remote",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
